@@ -1,0 +1,13 @@
+{
+    "firstname":"input[name='FirstName']",
+    "lastname":"input[name='LastName']",
+    "userName":"input[name='UserName']",
+    "password":"input[name='Password']",
+    "company":"input[type='radio']",
+    "email":"input[name='Email']",
+    "role":"c.Value as c.Text for c in column.options",
+    "mobilenumber":"input[name='Mobilephone']",
+    "savebutton":"button.btn.btn-success",
+    "adduser":" Add User",
+    "deleteUser":"//button[text()='OK']"
+}

@@ -21,6 +21,7 @@ export class angularHomePage
         email:ElementFinder;
         role:ElementFinder;
         customer:ElementFinder;
+        save:ElementFinder;
         arrEle:ElementArrayFinder
 
         constructor()
@@ -28,14 +29,15 @@ export class angularHomePage
 
             this.addUserLink=element(by.xpath(".//button[text()=' Add User']"));
             this.search=element(by.css("input[type='search']"));
-            this.firstName=element(by.css("angular.io"));
-            this.lasName=element(by.css("input[type='search']"));
-            this.userName=element(by.css("angular.io"));
-            this.password=element(by.css("input[type='search']"));
-            this.mobile=element(by.css("angular.io"));
-            this.email=element(by.css("input[type='search']"));
+            this.firstName=element(by.css("input[name='FirstName']"));
+            this.lasName=element(by.css("input[name='LastName']"));
+            this.userName=element(by.css("input[name='UserName']"));
+            this.password=element(by.css("input[name='Password']"));
+            this.mobile=element(by.css("input[name='Mobilephone']"));
+            this.email=element(by.css("input[name='Email']"));
+            this.save=element(by.xpath("//button[text()='Save']"));
             this.role=element(by.options("c.Value as c.Text for c in column.options"));
-            this.customer=element(by.css("input[type='search']"));   
+            this.customer=element(by.css("input[type='radio']"));   
 
         }
 
@@ -43,12 +45,3 @@ export class angularHomePage
 
 
 }
-
-var selectDropdownbyNum = function ( element, optionNum ) {
-    if (optionNum){
-      var options = element.all(by.tagName('option'))   
-        .then(function(options){
-          options[optionNum].click();
-        });
-    }
-};
