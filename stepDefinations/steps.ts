@@ -40,16 +40,12 @@ When('User Enter all the details in Add User Form', async () => {
    await ah.email.sendKeys(testData.email);
    await ah.mobile.sendKeys(testData.mobileNumber);
    await ah.customer.click();
-  // console.log("Reading Environment 2222222222222 : " + ah.role.count());
-   await browser.sleep(10000);
-   await element(by.xpath('//select[@name="RoleId"]')).click();
-   await element(by.xpath('//select[@name="RoleId"]/option[text()="Customer"]')).click();
-   await browser.sleep(50000);
-   await element(by.cssContainingText('option', 'Sales Team')).click();
-   
+  
+   await element(by.cssContainingText('option', testData.role)).click();
+  
    await ah.save.click();
   
-   await browser.sleep(50000);
+   await browser.sleep(20000);
   //await ah.role
 
   // await ah.arrEle.filter;
@@ -62,6 +58,9 @@ When('User Enter all the details in Add User Form', async () => {
 
 
 When('User delete specified user from table', async () => {
-  um.deleteuser("Novac");
+  console.log("Deleted User is : " + testData.deleteUser);
+  um.deleteuser(testData.deleteUser);
+  um.crossokicon.click();
+  await browser.sleep(20000);
 
 });

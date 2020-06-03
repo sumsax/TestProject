@@ -5,11 +5,13 @@
     "password":"input[name='Password']",
     "customer":"input[type='radio']",
     "email":"input[name='Email']",
-    "role":"c.Value as c.Text for c in column.options",
+    
     "mobilenumber":"input[name='Mobilephone']",
     "savebutton":"//button[text()='Save']",
     "adduser":".//button[text()=' Add User']",
+    "role":"input[name='RoleId']",
     "deleteUser":"//button[text()='OK']",
     "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
-    "deleteusericon":"//table[@table-title='Smart Table example']/tbody/tr/td[2]"
+    "deleteusericon":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
+    "okdeleteuser":"//button[text()='OK']"
 }

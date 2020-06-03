@@ -5,6 +5,8 @@
     "mobileNumber" : "87076666",
     "username" : "sumsax",
     "email" : "sumit@gmail.com",
-    "password": "hello@123"     
+    "password": "hello@123",
+    "deleteUser":"Novak",
+    "role":"Customer"
     
 }

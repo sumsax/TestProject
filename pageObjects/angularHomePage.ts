@@ -37,12 +37,25 @@ export class angularHomePage
             this.email=element(by.css(objectjson.email));
             this.save=element(by.xpath(objectjson.savebutton));
           //  this.role=element(by.options("c.Value as c.Text for c in column.options"));
-            this.role=element.all(by.tagName("option"));
+           // this.role=element.all(by.css());
             this.customer=element(by.css("input[type='radio']"));   
 
         }
 
 
+        async deleteuser(userLastName:string){
+          await this.role.each(function(elementtest, index) {
+         
+          elementtest.getText().then(async function (text) {
+              if(text==userLastName){
+                 await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[{userinthelst}]/td[11]//i[@class='icon icon-remove']")).click();              
+              }
+              
+          });
+        });
+
+      }
+        
          selectDropdownbyNum = function ( element, optionNum ) {
             if (optionNum){
               var options = element.all(by.tagName('option'))   
