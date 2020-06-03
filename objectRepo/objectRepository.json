@@ -3,11 +3,13 @@
     "lastname":"input[name='LastName']",
     "userName":"input[name='UserName']",
     "password":"input[name='Password']",
-    "company":"input[type='radio']",
+    "customer":"input[type='radio']",
     "email":"input[name='Email']",
     "role":"c.Value as c.Text for c in column.options",
     "mobilenumber":"input[name='Mobilephone']",
-    "savebutton":"button.btn.btn-success",
-    "adduser":" Add User",
-    "deleteUser":"//button[text()='OK']"
+    "savebutton":"//button[text()='Save']",
+    "adduser":".//button[text()=' Add User']",
+    "deleteUser":"//button[text()='OK']",
+    "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
+    "deleteusericon":"//table[@table-title='Smart Table example']/tbody/tr/td[2]"
 }

@@ -1,13 +1,13 @@
 import { ElementFinder,element,by, ElementArrayFinder, browser } from "protractor";
 
-// import fs from 'fs';
+import fs from 'fs';
 
-// const fs1 = require('fs');
-// const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
-// const objectjson = JSON.parse(objectFIle);
-// //var envVal = environmentDetail["env"]["envDetail"];
-// var objectLocator = objectjson.firstname;
-// console.log("Reading Locator 111111111111111111 : " + objectLocator);
+const fs1 = require('fs');
+const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
+const objectjson = JSON.parse(objectFIle);
+
+var objectLocator = objectjson.firstname;
+console.log("Reading Locator 111111111111111111 : " + objectLocator);
 
 export class angularHomePage
 {
@@ -19,7 +19,7 @@ export class angularHomePage
         password:ElementFinder;
         mobile:ElementFinder;
         email:ElementFinder;
-        role:ElementFinder;
+        role:ElementArrayFinder;
         customer:ElementFinder;
         save:ElementFinder;
         arrEle:ElementArrayFinder
@@ -27,21 +27,33 @@ export class angularHomePage
         constructor()
         {
 
-            this.addUserLink=element(by.xpath(".//button[text()=' Add User']"));
-            this.search=element(by.css("input[type='search']"));
-            this.firstName=element(by.css("input[name='FirstName']"));
-            this.lasName=element(by.css("input[name='LastName']"));
-            this.userName=element(by.css("input[name='UserName']"));
-            this.password=element(by.css("input[name='Password']"));
-            this.mobile=element(by.css("input[name='Mobilephone']"));
-            this.email=element(by.css("input[name='Email']"));
-            this.save=element(by.xpath("//button[text()='Save']"));
-            this.role=element(by.options("c.Value as c.Text for c in column.options"));
+            this.addUserLink=element(by.xpath(objectjson.adduser));
+            this.search=element(by.css("objectjson.firstname"));
+            this.firstName=element(by.css(objectjson.firstname));
+            this.lasName=element(by.css(objectjson.lastname));
+            this.userName=element(by.css(objectjson.userName));
+            this.password=element(by.css(objectjson.password));
+            this.mobile=element(by.css(objectjson.mobilenumber));
+            this.email=element(by.css(objectjson.email));
+            this.save=element(by.xpath(objectjson.savebutton));
+          //  this.role=element(by.options("c.Value as c.Text for c in column.options"));
+            this.role=element.all(by.tagName("option"));
             this.customer=element(by.css("input[type='radio']"));   
 
         }
 
+
+         selectDropdownbyNum = function ( element, optionNum ) {
+            if (optionNum){
+              var options = element.all(by.tagName('option'))   
+                .then(function(options){
+                  options[optionNum].click();
+                });
+            }
+          };
  
 
 
 }
+
+
