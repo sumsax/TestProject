@@ -61,7 +61,7 @@ Then('User verify successfully added user in user management table', async () =>
   
 });
 
-Then('User verify user deleted successfully', async () => {
-  console.log("Deleted User is : " + testData.deleteUser);
+Then('User verify user deleted successfully', async () => { 
+  await browser.sleep(10000);
   await um.verifydeleteduser(testData.deleteUser);
 });

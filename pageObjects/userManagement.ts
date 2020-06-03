@@ -27,7 +27,7 @@ export class usermanagement
             userinthelst++;
             
               if(text==userLastName){
-                console.log("Count when user met"+userinthelst);
+               
                 await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userinthelst + "]/td[11]//i[@class='icon icon-remove']")).click();              
               }            
           });
@@ -46,11 +46,10 @@ export class usermanagement
                  console.log("User Not Deleted");
                }
                else{
-                console.log("User Deleted Successfully");
+                 console.log("User Deleted Successfully");
                }            
            });
          });
- 
        }
 }
 

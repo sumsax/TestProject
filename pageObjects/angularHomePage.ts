@@ -9,7 +9,7 @@ const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
 const objectjson = JSON.parse(objectFIle);
 
 var objectLocator = objectjson.firstname;
-console.log("Reading Locator 111111111111111111 : " + objectLocator);
+
 
 export class angularHomePage
 {
