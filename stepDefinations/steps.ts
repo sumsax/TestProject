@@ -45,7 +45,7 @@ When('User Enter all the details in Add User Form', async () => {
   
    await ah.save.click();
   
-   await browser.sleep(20000);
+  // await browser.sleep(20000);
   //await ah.role
 
   // await ah.arrEle.filter;
@@ -60,7 +60,6 @@ When('User Enter all the details in Add User Form', async () => {
 When('User delete specified user from table', async () => {
   console.log("Deleted User is : " + testData.deleteUser);
   um.deleteuser(testData.deleteUser);
-  um.crossokicon.click();
+  await um.crossokicon.click();
   await browser.sleep(20000);
-
 });

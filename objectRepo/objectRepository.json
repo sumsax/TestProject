@@ -3,7 +3,7 @@
     "lastname":"input[name='LastName']",
     "userName":"input[name='UserName']",
     "password":"input[name='Password']",
-    "customer":"input[type='radio']",
+    "customer":"input[name='optionsRadios']",
     "email":"input[name='Email']",
     
     "mobilenumber":"input[name='Mobilephone']",
@@ -14,4 +14,5 @@
     "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
     "deleteusericon":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
     "okdeleteuser":"//button[text()='OK']"
+   
 }
