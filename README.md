@@ -1,17 +1,27 @@
-Protractor Cucumber Framework
+Protractor Cucumber Framework Features
 =============================
 
 
+Paramterterization - 
+
+      Object Repo is parameterized to json
+      Test Data Parameterised in json
+      Cucumber Report generated and auto open
+      Expected Condition 
+      On Failure Embedded screensot in cucumber report
+      Modularisation Page Object Model Based
 
 This framework was originally part of [angular/protractor](http://www.way2automation.com/angularjs-protractor/webtables) and
 
 
-Install-Root DIR
+Install-Root DIR - Reports
 -------
 
 
 `npm install
 
+
+.ProtractorTypeScriptCucumber/
 
 For Contributors
 ----------------

@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3150000000
+              "duration": 3735000000
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21192000000
+              "duration": 21096000000
             }
           },
           {
@@ -69,7 +69,8 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           }
         ]
@@ -97,7 +98,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 828000000
+              "duration": 899000000
             }
           },
           {
@@ -110,7 +111,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20246000000
+              "duration": 20238000000
             }
           },
           {
@@ -120,7 +121,8 @@
               "location": "stepDefinations/hooks.ts:22"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {

@@ -15,7 +15,10 @@ export let config: Config = {
   
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-      browserName: 'chrome'
+      browserName: 'chrome',
+      chromeOptions: {
+        args:['--window-size=1920,1080']
+    }
     },
   
     // Spec patterns are relative to the configuration file location passed
@@ -35,7 +38,7 @@ export let config: Config = {
       },
       onPrepare: async () => {
         
-      //  await browser.waitForAngularEnabled(true);
+      
         
       },
 
@@ -64,4 +67,3 @@ export let config: Config = {
   
   
   };
-  
