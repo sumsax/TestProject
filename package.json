@@ -6,7 +6,7 @@
   "scripts": {
     "test": "protractor JSFiles/configuration.js",
     "pretest": "tsc",
-    "cucumbertest": "protractor JSFiles/cucumberconfig.js",
+    "cucumbertest": "tsc && protractor JSFiles/cucumberconfig.js",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update"
   },

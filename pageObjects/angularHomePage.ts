@@ -26,7 +26,7 @@ export class angularHomePage
         constructor()
         {
 
-            this.addUserLink=element(by.linkText(" Add User"));
+            this.addUserLink=element(by.xpath(".//button[text()=' Add User']"));
             this.search=element(by.css("input[type='search']"));
             this.firstName=element(by.css("angular.io"));
             this.lasName=element(by.css("input[type='search']"));
