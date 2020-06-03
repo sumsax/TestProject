@@ -34,6 +34,24 @@ export class usermanagement
         });
 
       }
+
+      async verifydeleteduser(userLastName:string){
+        let userinthelst=0;
+           await this.userList.each(function(elementtest, index) {
+                
+           elementtest.getText().then(async function (text) {
+             userinthelst++;
+             
+               if(text==userLastName){
+                 console.log("User Not Deleted");
+               }
+               else{
+                console.log("User Deleted Successfully");
+               }            
+           });
+         });
+ 
+       }
 }
 
 

@@ -10,6 +10,7 @@ Paramterterization -
       Expected Condition 
       On Failure Embedded screensot in cucumber report
       Modularisation Page Object Model Based
+      Exception Handling
 
 This framework was originally part of [angular/protractor](http://www.way2automation.com/angularjs-protractor/webtables) and
 

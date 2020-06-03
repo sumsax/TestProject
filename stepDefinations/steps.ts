@@ -18,7 +18,7 @@ let ah = new angularHomePage();
 let um = new usermanagement();
 const expectedConditions = protractor.ExpectedConditions;
 
-Given('I will navigate to Site', async () => {
+Given('Admin user landed on user management page', async () => {
 
   await browser.get(testData.env).then(async () => {
     await browser.wait(expectedConditions.visibilityOf(ah.addUserLink), 60);
@@ -44,7 +44,7 @@ When('User Enter all the details in Add User Form', async () => {
   
    await ah.save.click();
   
-   await browser.sleep(20000);
+   await browser.sleep(10000);
   
 });
 
@@ -54,4 +54,14 @@ When('User delete specified user from table', async () => {
   um.deleteuser(testData.deleteUser);
   await um.crossokicon.click();
   await browser.sleep(20000);
+});
+
+Then('User verify successfully added user in user management table', async () => {
+  ah.verifyAddedUser(testData.firstName);
+  
+});
+
+Then('User verify user deleted successfully', async () => {
+  console.log("Deleted User is : " + testData.deleteUser);
+  await um.verifydeleteduser(testData.deleteUser);
 });

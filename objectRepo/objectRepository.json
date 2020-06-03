@@ -12,7 +12,8 @@
     "role":"input[name='RoleId']",
     "deleteUser":"//button[text()='OK']",
     "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
-    "deleteusericon":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
-    "okdeleteuser":"//button[text()='OK']"
+    "okdeleteuser":"//button[text()='OK']",
+    "searchbox":"searchValue",
+    "firstuser":"//table[@table-title='Smart Table example']/tbody/tr/td[1]"
    
 }

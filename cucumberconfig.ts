@@ -24,7 +24,7 @@ export let config: Config = {
     // Spec patterns are relative to the configuration file location passed
     // to protractor (in this example conf.js).
     // They may include glob patterns.
-    specs: ['../features/demo.feature'],
+    specs: ['../features/addverifydelete.feature'],
     cucumberOpts: {
         // require step definitions
        // tags:"@AngularTesting",
