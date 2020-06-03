@@ -1,0 +1,80 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "As an Automation Engineer I want to automate",
+    "line": 2,
+    "id": "as-an-automation-engineer-i-want-to-automate",
+    "tags": [
+      {
+        "name": "@addUser",
+        "line": 1
+      }
+    ],
+    "uri": "features/demo.feature",
+    "elements": [
+      {
+        "id": "as-an-automation-engineer-i-want-to-automate;as-an-automation-engineer-i-want-to-add-a-user",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "As an Automation Engineer I want to add a user",
+        "tags": [
+          {
+            "name": "@addUser",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I will navigate to Site",
+            "match": {
+              "location": "stepDefinations/steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2804000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "User delete specified user from table",
+            "match": {
+              "location": "stepDefinations/steps.ts:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20411000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinations/hooks.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
