@@ -3,7 +3,7 @@
     "lastname":"input[name='LastName']",
     "userName":"input[name='UserName']",
     "password":"input[name='Password']",
-    "customer":"input[name='optionsRadios']",
+    "customer":"option in column.options",
     "email":"input[name='Email']",
     
     "mobilenumber":"input[name='Mobilephone']",

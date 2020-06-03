@@ -9,11 +9,16 @@ import fs from 'fs';
 const fs1 = require('fs');
 const data = fs1.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
-//var envVal = environmentDetail["env"]["envDetail"];
+
+
+const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
+const objectjson = JSON.parse(objectFIle);
+
 var dataVal = testData.env;
 console.log("Reading Environment : " + dataVal);
+
 let expect = chai.expect;
-//let usmngmt = new userManagement();
+
 let ah = new angularHomePage();
 let um = new usermanagement();
 const expectedConditions = protractor.ExpectedConditions;
@@ -38,7 +43,7 @@ When('User Enter all the details in Add User Form', async () => {
    await ah.password.sendKeys(testData.password);
    await ah.email.sendKeys(testData.email);
    await ah.mobile.sendKeys(testData.mobileNumber);
-   await ah.customer.click();
+   await ah.customer.get(0).click();
   
    await element(by.cssContainingText('option', testData.role)).click();
   

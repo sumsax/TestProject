@@ -11,8 +11,9 @@ Paramterterization -
       On Failure Embedded screensot in cucumber report
       Modularisation Page Object Model Based
       Exception Handling
+      Protractor and Selenium Both Locators Used
 
-This framework was originally part of [angular/protractor](http://www.way2automation.com/angularjs-protractor/webtables) and
+This framework was originally part of [angular/protractor/typescript/cucumber](http://www.way2automation.com/angularjs-protractor/webtables) and
 
 
 Install-Root DIR - Reports
