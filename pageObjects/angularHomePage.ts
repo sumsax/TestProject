@@ -19,7 +19,7 @@ export class angularHomePage
         password:ElementFinder;
         mobile:ElementFinder;
         email:ElementFinder;
-        role:ElementArrayFinder;
+        role:ElementFinder;
         customer:ElementFinder;
         save:ElementFinder;
         arrEle:ElementArrayFinder
@@ -28,7 +28,6 @@ export class angularHomePage
         {
 
             this.addUserLink=element(by.xpath(objectjson.adduser));
-            this.search=element(by.css("objectjson.firstname"));
             this.firstName=element(by.css(objectjson.firstname));
             this.lasName=element(by.css(objectjson.lastname));
             this.userName=element(by.css(objectjson.userName));
@@ -37,8 +36,8 @@ export class angularHomePage
             this.email=element(by.css(objectjson.email));
             this.save=element(by.xpath(objectjson.savebutton));
           //  this.role=element(by.options("c.Value as c.Text for c in column.options"));
-           // this.role=element.all(by.css());
-            this.customer=element(by.css("input[type='radio']"));   
+            this.role=element(by.cssContainingText(objectjson.role,""));
+            this.customer=element(by.css(objectjson.customer));   
 
         }
 
@@ -56,17 +55,6 @@ export class angularHomePage
 
       }
         
-         selectDropdownbyNum = function ( element, optionNum ) {
-            if (optionNum){
-              var options = element.all(by.tagName('option'))   
-                .then(function(options){
-                  options[optionNum].click();
-                });
-            }
-          };
- 
-
-
 }
 
 

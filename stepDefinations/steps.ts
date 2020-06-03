@@ -5,14 +5,13 @@ import { angularHomePage } from "../pageObjects/angularHomePage";
 import { usermanagement } from "../pageObjects/userManagement";
 import chai from "chai";
 import fs from 'fs';
-var userinthelst =0;
 
 const fs1 = require('fs');
 const data = fs1.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 //var envVal = environmentDetail["env"]["envDetail"];
 var dataVal = testData.env;
-console.log("Reading Environment 111111111111111111 : " + dataVal);
+console.log("Reading Environment : " + dataVal);
 let expect = chai.expect;
 //let usmngmt = new userManagement();
 let ah = new angularHomePage();
@@ -24,7 +23,7 @@ Given('I will navigate to Site', async () => {
   await browser.get(testData.env).then(async () => {
     await browser.wait(expectedConditions.visibilityOf(ah.addUserLink), 60);
     expect(await ah.addUserLink.isDisplayed()).to.equals(true,
-      "Error while loading User Management page, unable to locate Add User button");
+      "CLick Add User");
   });
 });
 
@@ -45,15 +44,8 @@ When('User Enter all the details in Add User Form', async () => {
   
    await ah.save.click();
   
-  // await browser.sleep(20000);
-  //await ah.role
-
-  // await ah.arrEle.filter;
-
-  // expect(ah.arrEle.getText()).equal('some text');
-
-
-
+   await browser.sleep(20000);
+  
 });
 
 

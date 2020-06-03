@@ -25,13 +25,11 @@ export class usermanagement
                
           elementtest.getText().then(async function (text) {
             userinthelst++;
-            console.log("44444444444444444444" + text);
+            
               if(text==userLastName){
                 console.log("Count when user met"+userinthelst);
-                console.log("111111111111//table[@table-title='Smart Table example']/tbody/tr[" + userinthelst + "]/td[11]//i[@class='icon icon-remove']");
-                 await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userinthelst + "]/td[11]//i[@class='icon icon-remove']")).click();              
-              }
-              
+                await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userinthelst + "]/td[11]//i[@class='icon icon-remove']")).click();              
+              }            
           });
         });
 

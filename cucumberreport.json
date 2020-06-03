@@ -13,10 +13,10 @@
     "uri": "features/demo.feature",
     "elements": [
       {
-        "id": "as-an-automation-engineer-i-want-to-automate;as-an-automation-engineer-i-want-to-add-a-user",
+        "id": "as-an-automation-engineer-i-want-to-automate;user-enters-all-details-in-user-form-and-save-it",
         "keyword": "Scenario",
         "line": 8,
-        "name": "As an Automation Engineer I want to add a user",
+        "name": "User Enters all details in User Form and save it",
         "tags": [
           {
             "name": "@addUser",
@@ -31,24 +31,24 @@
             "line": 5,
             "name": "I will navigate to Site",
             "match": {
-              "location": "stepDefinations/steps.ts:22"
+              "location": "stepDefinations/steps.ts:21"
             },
             "result": {
               "status": "passed",
-              "duration": 2804000000
+              "duration": 3150000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "User delete specified user from table",
+            "name": "User Enter all the details in Add User Form",
             "match": {
-              "location": "stepDefinations/steps.ts:60"
+              "location": "stepDefinations/steps.ts:31"
             },
             "result": {
               "status": "passed",
-              "duration": 20411000000
+              "duration": 21192000000
             }
           },
           {
@@ -69,8 +69,68 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
             },
             "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "as-an-automation-engineer-i-want-to-automate;as-an-automation-engineer-i-want-to-add-a-user",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "As an Automation Engineer I want to add a user",
+        "tags": [
+          {
+            "name": "@addUser",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I will navigate to Site",
+            "match": {
+              "location": "stepDefinations/steps.ts:21"
+            },
+            "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 828000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "User delete specified user from table",
+            "match": {
+              "location": "stepDefinations/steps.ts:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20246000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinations/hooks.ts:22"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
             }
           }
         ]
