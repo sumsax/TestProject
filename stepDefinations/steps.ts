@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cucumber";
 //import { userManagement } from "../pageObjects/userManagement";
 import { browser, element, by, protractor } from "protractor";
-import { angularHomePage } from "../pageObjects/angularHomePage";
+import { HomePage } from "../pageObjects/angularHomePage";
 import { usermanagement } from "../pageObjects/userManagement";
 import chai from "chai";
 import fs from 'fs';
@@ -19,7 +19,7 @@ console.log("Reading Environment : " + dataVal);
 
 let expect = chai.expect;
 
-let ah = new angularHomePage();
+let ah = new HomePage();
 let um = new usermanagement();
 const expectedConditions = protractor.ExpectedConditions;
 

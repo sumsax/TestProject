@@ -3,22 +3,20 @@ import fs from 'fs';
 import chai from "chai";
 
 
-
 let expect = chai.expect;
 
-//Description with proper name
-const fs1 = require('fs');
-const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
+const filereader = require('fs');
+const objectFile = filereader.readFileSync('./objectRepo/objectRepository.json');
 //Caps j 
-const objectjson = JSON.parse(objectFIle);
+const objectJson = JSON.parse(objectFile);
 
-const data = fs1.readFileSync('./testData/data.json');
+const data = filereader.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
-var objectLocator = objectjson.firstname;
+var objectLocator = objectJson.firstname;
 
-
-export class angularHomePage {
+//Class to initial add user and verify added user functionality
+export class HomePage {
   
         addUserLink:ElementFinder;
         search:ElementFinder;
@@ -37,28 +35,30 @@ export class angularHomePage {
 
         constructor() {
 
-            this.addUserLink = element(by.xpath(objectjson.adduser));
-            this.firstName = element(by.css(objectjson.firstname));
-            this.searchuserbox = element(by.model(objectjson.searchbox));
-            this.lasName = element(by.css(objectjson.lastname));
-            this.userName = element(by.css(objectjson.userName));
-            this.password = element(by.css(objectjson.password));
-            this.mobile = element(by.css(objectjson.mobilenumber));
-            this.email = element(by.css(objectjson.email));
-            this.save = element(by.xpath(objectjson.savebutton));
-            this.role = element(by.cssContainingText(objectjson.role,testData.role));
-            this.customer = element.all(by.repeater(objectjson.customer));          
-            this.fistUser = element(by.xpath(objectjson.firstuser)); 
+            this.addUserLink = element(by.xpath(objectJson.adduser));
+            this.firstName = element(by.css(objectJson.firstname));
+            this.searchuserbox = element(by.model(objectJson.searchbox));
+            this.lasName = element(by.css(objectJson.lastname));
+            this.userName = element(by.css(objectJson.userName));
+            this.password = element(by.css(objectJson.password));
+            this.mobile = element(by.css(objectJson.mobilenumber));
+            this.email = element(by.css(objectJson.email));
+            this.save = element(by.xpath(objectJson.savebutton));
+            this.role = element(by.cssContainingText(objectJson.role,testData.role));
+            this.customer = element.all(by.repeater(objectJson.customer));          
+            this.fistUser = element(by.xpath(objectJson.firstuser)); 
 
         }
 
       async verifyAddedUser(firstname:string){
 
             try{
-              await this.searchuserbox.sendKeys(firstname);        
+              
+              await this.searchuserbox.sendKeys(firstname);  
+             // await browser.sleep(20000);      
               await expect(this.fistUser.getText()).toEqual(firstname);
             }catch(err){
-              console.log(err);
+              //console.log(err);
             }
 
       }
