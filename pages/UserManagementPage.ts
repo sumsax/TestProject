@@ -24,9 +24,8 @@ export class usermanagement{
        let userinthelst=0;
           await this.userList.each(function(elementtest, index) {
                
-          elementtest.getText().then(async function (text) {
-            userinthelst++;
-            
+              elementtest.getText().then(async function (text) {
+              userinthelst++;       
               if(text==userLastName){
                
                 await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userinthelst + "]/td[11]//i[@class='icon icon-remove']")).click();              
@@ -42,9 +41,8 @@ export class usermanagement{
         let userinthelst=0;
            await this.userList.each(function(elementtest, index) {
                 
-           elementtest.getText().then(async function (text) {
-             userinthelst++;
-             
+               elementtest.getText().then(async function (text) {
+               userinthelst++;       
                if(text==userLastName){
                  console.log("User Not Deleted");
                }
