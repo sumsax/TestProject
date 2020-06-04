@@ -49,7 +49,7 @@ export class usermanagement{
                  console.log("User Not Deleted");
                }
                else{
-                 console.log("User Deleted Successfully");
+                 console.log("User Not Present in Row " + userinthelst);
                }            
            });
          });

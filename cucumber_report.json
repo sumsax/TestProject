@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2142000000
+              "duration": 2355000000
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1101000000
+              "duration": 923000000
             }
           },
           {
@@ -61,7 +61,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 125000000
+              "duration": 110000000
             }
           },
           {
@@ -82,8 +82,7 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           }
         ]
@@ -111,7 +110,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 626000000
+              "duration": 688000000
             }
           },
           {
@@ -124,7 +123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 220000000
+              "duration": 198000000
             }
           },
           {
@@ -137,7 +136,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 67000000
+              "duration": 59000000
             }
           },
           {
@@ -157,8 +156,7 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           }
         ]

@@ -2,7 +2,7 @@ import { Given, When, Then } from "cucumber";
 //import { userManagement } from "../pageObjects/userManagement";
 import { browser, element, by, protractor } from "protractor";
 import { HomePage } from "../pages/HomePage";
-import { usermanagement } from "../pages/userManagement";
+import { usermanagement } from "../pages/UserManagementPage";
 import chai from "chai";
 import fs from 'fs';
 
