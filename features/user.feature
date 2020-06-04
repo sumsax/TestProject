@@ -9,5 +9,5 @@ Feature: As an Automation Engineer I want to verify user creation and deletion f
           Then Verify user added successfully on web table
 
      Scenario: Delete user User Name: novak and validate user has been deleted
-          When Delete specified user i.e. "Novak" from table
-          Then Verify user "Novak" deleted successfully
+          When Delete specified user i.e. "novak" from table
+          Then Verify user "novak" deleted successfully

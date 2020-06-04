@@ -25,7 +25,7 @@ export let config: Config = {
     // require step definitions
     tags:"@Sanity",
     format: 'json:reports/cucumber_report.json',
-    require: ['./stepdefinations/*.js']
+    require: ['./stepdefinations/*.js', './utils/*.js']
   },
 
   onComplete: () => {

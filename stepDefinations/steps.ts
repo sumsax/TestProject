@@ -15,22 +15,20 @@ const orJsonObject = JSON.parse(orJsonFile);
 const envJsonFile = fileReader.readFileSync('./environment.json');
 const envJsonObject = JSON.parse(envJsonFile);
 
-let expect = chai.expect;
-
 let addUserPage = new AddUserPage();
 let userManagementPage = new UserManagementPage();
+
 const expectedConditions = protractor.ExpectedConditions;
+let expect = chai.expect;
 
 Given('Admin user landed on user management page', async () => {
 
   await browser.get(envJsonObject.env).then(async () => {
-    // browser.wait(expectedConditions.visibilityOf(userManagementPage.getAddUserLink()), 60);
-    // expect(await userManagementPage.getAddUserLink().isDisplayed()).to.equals(true,
-    //   "CLick Add User");
-    browser.sleep(10000);
+    browser.wait(expectedConditions.visibilityOf(userManagementPage.addUserLink), 60);
+    expect(await userManagementPage.addUserLink.isDisplayed()).to.equals(true,
+      "CLick Add User");
   });
 });
-
 
 When('Add new User with all the details on Add User Form', async () => {
   await userManagementPage.clickOnAddUser();
@@ -38,15 +36,17 @@ When('Add new User with all the details on Add User Form', async () => {
 });
 
 Then('Verify user added successfully on web table', async () => {
-  await userManagementPage.verifyAddedUser(testData.username);
+  await userManagementPage.isUserExist(testData.username).then((userFound) => {
+    expect(userFound).to.equals(true, "User not added");
+  })
 });
 
 When('Delete specified user i.e. {string} from table', async (userName) => {
-  // userManagementPage.deleteuser(userName);
-  // await userManagementPage.crossokicon.click();
-  // console.log("Deleted User is : " + testData.deleteUser);
+  userManagementPage.deleteuser(userName);
 });
 
 Then('Verify user {string} deleted successfully', async (userName) => {
-  // await userManagementPage.verifydeleteduser(userName);
+  await userManagementPage.isUserExist(testData.username).then((userFound) => {
+    expect(userFound).to.equals(false, "User not deleted");
+  })
 });

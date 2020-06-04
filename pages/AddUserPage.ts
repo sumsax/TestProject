@@ -23,6 +23,9 @@ export class AddUserPage {
       private customer:ElementArrayFinder;
       private save:ElementFinder;
 
+      /**
+       * constructor to initiaize the elements
+       */
       constructor() {
         this.firstName = element(by.css(orJsonObject.firstname));
         this.lasName = element(by.css(orJsonObject.lastname));
