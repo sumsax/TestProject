@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2205000000
+              "duration": 2142000000
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10950000000
+              "duration": 1101000000
             }
           },
           {
@@ -57,11 +57,11 @@
             "line": 10,
             "name": "User verify successfully added user in user management table",
             "match": {
-              "location": "stepDefinations/steps.ts:64"
+              "location": "stepDefinations/steps.ts:62"
             },
             "result": {
               "status": "passed",
-              "duration": 2186000000
+              "duration": 125000000
             }
           },
           {
@@ -111,7 +111,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 814000000
+              "duration": 626000000
             }
           },
           {
@@ -120,11 +120,11 @@
             "line": 13,
             "name": "User delete specified user from table",
             "match": {
-              "location": "stepDefinations/steps.ts:57"
+              "location": "stepDefinations/steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 2239000000
+              "duration": 220000000
             }
           },
           {
@@ -133,11 +133,11 @@
             "line": 14,
             "name": "User verify user deleted successfully",
             "match": {
-              "location": "stepDefinations/steps.ts:69"
+              "location": "stepDefinations/steps.ts:67"
             },
             "result": {
               "status": "passed",
-              "duration": 2064000000
+              "duration": 67000000
             }
           },
           {

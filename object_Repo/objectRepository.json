@@ -9,7 +9,7 @@
     "savebutton":"//button[text()='Save']",
     "adduser":".//button[text()=' Add User']",
     "role":"input[name='RoleId']",
-
+    "addeduserlist":"//table[@table-title='Smart Table example']/tbody/tr/td[3]",
     "deleteUser":"//button[text()='OK']",
     "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
     "okdeleteuser":"//button[text()='OK']",

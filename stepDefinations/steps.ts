@@ -34,6 +34,7 @@ Given('Admin user landed on user management page', async () => {
 
 
 When('User Enter all the details in Add User Form', async () => {
+
    // Write code here that turns the phrase above into concrete actions
    await browser.waitForAngularEnabled(true);
    await ah.addUserLink.click();
@@ -43,30 +44,27 @@ When('User Enter all the details in Add User Form', async () => {
    await ah.password.sendKeys(testData.password);
    await ah.email.sendKeys(testData.email);
    await ah.mobile.sendKeys(testData.mobileNumber);
-   await ah.customer.get(0).click();
-  
+   await ah.customer.get(0).click(); 
    await element(by.cssContainingText('option', testData.role)).click();
   
    await ah.save.click();
-  
-   await browser.sleep(10000);
   
 });
 
 
 When('User delete specified user from table', async () => {
+
   console.log("Deleted User is : " + testData.deleteUser);
   um.deleteuser(testData.deleteUser);
   await um.crossokicon.click();
-  await browser.sleep(2000);
 });
 
 Then('User verify successfully added user in user management table', async () => {
-  await ah.verifyAddedUser(testData.firstName);
-  
+
+  await ah.verifyaddeduser(testData.username);
 });
 
 Then('User verify user deleted successfully', async () => { 
-  await browser.sleep(2000);
-  await um.verifydeleteduser(testData.deleteUser);
+
+  await um.verifydeleteduser(testData.lastName);
 });

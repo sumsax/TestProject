@@ -28,6 +28,7 @@ export class HomePage {
         arrEle:ElementArrayFinder
         searchuserbox:ElementFinder
         fistUser:ElementFinder
+        addeduserList:ElementArrayFinder;
 
         constructor() {
 
@@ -43,23 +44,23 @@ export class HomePage {
             this.role = element(by.cssContainingText(objectJson.role,testData.role));
             this.customer = element.all(by.repeater(objectJson.customer));          
             this.fistUser = element(by.xpath(objectJson.firstuser)); 
+            this.addeduserList=element.all(by.xpath(objectJson.addeduserlist)); 
 
         }
 
-
-      //verify added user after searching  
-      async verifyAddedUser(firstname:string){
-
-        try{     
-            await browser.sleep(2000);
-            await this.searchuserbox.sendKeys(firstname);      
-            console.log("first user after search" + this.fistUser.getText());
-            expect(await this.fistUser.getText()).to.equals(firstname);     
-            }catch(err){
-              console.log(err);
-            }
-
-      }
+      //verify added user in any of the row
+      async verifyaddeduser(userLastName:string){
+        let userinthelst=0;
+           await this.addeduserList.each(function(elementtest, index) {              
+               elementtest.getText().then(async function (text) {
+               userinthelst++;           
+               if(text==userLastName){
+                 console.log("User Found in Row : " + userinthelst);
+                 return true;
+               }                        
+           });
+         });
+       }
 }
 
 
