@@ -4,9 +4,9 @@
   "description": "framework for protractor",
   "main": "index.js",
   "scripts": {
-    "test": "protractor JS_Files/configuration.js",
+    "test": "protractor JS_Files/config.js",
     "pretest": "tsc",
-    "cucumbertest": "tsc && protractor JS_Files/cucumberconfig.js",
+    "cucumbertest": "tsc && protractor JS_Files/config.js",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update"
   },
