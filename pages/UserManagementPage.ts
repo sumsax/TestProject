@@ -1,6 +1,7 @@
 import { ElementFinder, element, by, ElementArrayFinder, browser } from "protractor";
 
 import fs from 'fs';
+import { debug } from "util";
 
 const fileReader = require('fs');
 const orJsonFile = fileReader.readFileSync('./object_repo/object_repository.json');
@@ -11,24 +12,16 @@ const orJsonObject = JSON.parse(orJsonFile);
  */
 export class UserManagementPage {
   private _addUserLink: ElementFinder;
-  private search:ElementFinder;
   private userList: ElementArrayFinder;
-  private deleteConfirmOk: ElementFinder;
-  private arrEle:ElementArrayFinder
-  private searchuserbox:ElementFinder
-  private fistUser:ElementFinder
-  private addeduserList:ElementArrayFinder;
+  private deleteConfirmation: ElementFinder;
 
   /**
    *  cnstructor to initiaize the element
    */
   constructor() {
     this.addUserLink = element(by.xpath(orJsonObject.adduser));
-    this.searchuserbox = element(by.model(orJsonObject.searchbox));
     this.userList = element.all(by.xpath(orJsonObject.userlist));
-    this.deleteConfirmOk = element(by.xpath(orJsonObject.okdeleteuser));
-    this.fistUser = element(by.xpath(orJsonObject.firstuser)); 
-    this.addeduserList=element.all(by.xpath(orJsonObject.addeduserlist)); 
+    this.deleteConfirmation = element(by.xpath(orJsonObject.deleteConfirmation));
   }
 
   public get addUserLink(): ElementFinder {
@@ -51,12 +44,13 @@ export class UserManagementPage {
     await this.userList.each((currentUser, index) => {
       currentUser.getText().then(async function (displayUserName) {
         userPosInList++;
+        console.log(userPosInList + " ----- "+ displayUserName + " ----- "+ userName);
         if (displayUserName == userName) {
           await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userPosInList + "]/td[11]//i[@class='icon icon-remove']")).click();
-          await this.deleteConfirmOk.click();
         }
       });
     });
+    await this.deleteConfirmation.click();
   }
 
    /**
@@ -67,9 +61,10 @@ export class UserManagementPage {
     
     let userPosInList = 0;
     let userFound = false;
-        await this.addeduserList.each(function(currentUser, index) {              
+        await this.userList.each(function(currentUser, index) {              
             currentUser.getText().then(async function (displayUserName) {
-            userPosInList++;       
+            userPosInList++;     
+            console.log(userPosInList + " ---------------- " +displayUserName + " ---------------- " + userName) ; 
             if(displayUserName == userName){
               console.log("User Found at Row : " + userPosInList);
               userFound = true;

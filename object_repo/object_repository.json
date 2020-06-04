@@ -4,15 +4,11 @@
     "userName": "input[name='UserName']",
     "password": "input[name='Password']",
     "customer": "option in column.options",
+    "role": "option",
     "email": "input[name='Email']",
     "mobilenumber": "input[name='Mobilephone']",
     "savebutton": "//button[text()='Save']",
     "adduser": ".//button[text()=' Add User']",
-    "role": "option",
-    "addeduserlist": "//table[@table-title='Smart Table example']/tbody/tr/td[3]",
-    "deleteUser": "//button[text()='OK']",
-    "userlist": "//table[@table-title='Smart Table example']/tbody/tr/td[2]",
-    "okdeleteuser": "//button[text()='OK']",
-    "searchbox": "searchValue",
-    "firstuser": "//table[@table-title='Smart Table example']/tbody/tr/td[1]"
+    "userlist": "//table[@table-title='Smart Table example']/tbody/tr/td[3]",
+    "deleteConfirmation": "//button[text()='OK']"
 }
