@@ -55,8 +55,7 @@ export class HomePage {
 
         try{     
             await browser.sleep(2000);
-            await this.searchuserbox.sendKeys(firstname);  
-            await browser.sleep(2000);     
+            await this.searchuserbox.sendKeys(firstname);      
             console.log("first user after search" + this.fistUser.getText());
             expect(await this.fistUser.getText()).to.equals(firstname);     
             }catch(err){

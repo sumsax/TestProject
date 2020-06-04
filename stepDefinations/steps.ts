@@ -58,7 +58,7 @@ When('User delete specified user from table', async () => {
   console.log("Deleted User is : " + testData.deleteUser);
   um.deleteuser(testData.deleteUser);
   await um.crossokicon.click();
-  await browser.sleep(5000);
+  await browser.sleep(2000);
 });
 
 Then('User verify successfully added user in user management table', async () => {
@@ -67,6 +67,6 @@ Then('User verify successfully added user in user management table', async () =>
 });
 
 Then('User verify user deleted successfully', async () => { 
-  await browser.sleep(10000);
+  await browser.sleep(2000);
   await um.verifydeleteduser(testData.deleteUser);
 });
