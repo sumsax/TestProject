@@ -6,13 +6,13 @@ import { usermanagement } from "../pages/userManagement";
 import chai from "chai";
 import fs from 'fs';
 
-const fs1 = require('fs');
-const data = fs1.readFileSync('./testData/data.json');
+const fileReader = require('fs');
+const data = fileReader.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
 
-const objectFIle = fs1.readFileSync('./object_Repo/objectRepository.json');
-const objectjson = JSON.parse(objectFIle);
+const objectFIle = fileReader.readFileSync('./object_Repo/objectRepository.json');
+const objectJson = JSON.parse(objectFIle);
 
 let dataVal = testData.env;
 console.log("Reading Environment : " + dataVal);

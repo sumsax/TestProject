@@ -2,12 +2,9 @@ import { ElementFinder,element,by, ElementArrayFinder, browser } from "protracto
 
 import fs from 'fs';
 
-const fs1 = require('fs');
-const objectFIle = fs1.readFileSync('./object_Repo/objectRepository.json');
-const objectjson = JSON.parse(objectFIle);
-
-var objectLocator = objectjson.firstname;
-
+const fileReader = require('fs');
+const objectFIle = fileReader.readFileSync('./object_Repo/objectRepository.json');
+const objectJson = JSON.parse(objectFIle);
 
 
 //class to delete and verify user deletion
@@ -17,8 +14,8 @@ export class usermanagement{
       
         constructor()
         {               
-            this.userList=element.all(by.xpath(objectjson.userlist));  
-            this.crossokicon=element(by.xpath(objectjson.okdeleteuser));         
+            this.userList=element.all(by.xpath(objectJson.userlist));  
+            this.crossokicon=element(by.xpath(objectJson.okdeleteuser));         
         }
 
 

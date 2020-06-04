@@ -41,6 +41,7 @@ This module requires the following modules:
 
  * Node Js Installed 
  * Visual Studio code
+ * Chrome Version => 80
 
  NSTALLATION
 ------------

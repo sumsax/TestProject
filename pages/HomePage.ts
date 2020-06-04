@@ -3,16 +3,13 @@ import fs from 'fs';
 import chai from "chai";
 
 var expect = chai.expect;
-
 const filereader = require('fs');
 const objectFile = filereader.readFileSync('./object_Repo/objectRepository.json');
-//Caps j 
-const objectJson = JSON.parse(objectFile);
 
+const objectJson = JSON.parse(objectFile);
 const data = filereader.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
-var objectLocator = objectJson.firstname;
 
 //Class to initial add user and verify added user functionality
 export class HomePage {
