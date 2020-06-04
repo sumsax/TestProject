@@ -24,7 +24,6 @@ export class AddUserPage {
       private save:ElementFinder;
 
       constructor() {
-
         this.firstName = element(by.css(orJsonObject.firstname));
         this.lasName = element(by.css(orJsonObject.lastname));
         this.userName = element(by.css(orJsonObject.userName));

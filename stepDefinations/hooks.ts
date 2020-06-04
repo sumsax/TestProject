@@ -4,17 +4,17 @@ import { browser } from "protractor";
 
 
 
-Before({tags: "@calculatortesting"}, function () {
+Before({tags: "@Sanity"}, function () {
   // This hook will be executed before scenarios tagged with @foo
   browser.manage().window().maximize();
 });
 
-After({tags: "@calculatortesting"}, function () {
+After({tags: "@Sanity"}, function () {
     // This hook will be executed before scenarios tagged with @foo
     console.log("Test is completed");
   });
 
-Before({tags: "@AngularTesting"}, function () {
+Before({tags: "@Sanity"}, function () {
   // This hook will be executed before scenarios tagged with @foo and @bar
   console.log(" I need to execute first");
 });

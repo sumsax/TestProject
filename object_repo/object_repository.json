@@ -8,7 +8,7 @@
     "mobilenumber": "input[name='Mobilephone']",
     "savebutton": "//button[text()='Save']",
     "adduser": ".//button[text()=' Add User']",
-    "role": "input[name='RoleId']",
+    "role": "option",
     "addeduserlist": "//table[@table-title='Smart Table example']/tbody/tr/td[3]",
     "deleteUser": "//button[text()='OK']",
     "userlist": "//table[@table-title='Smart Table example']/tbody/tr/td[2]",
