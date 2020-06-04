@@ -1,8 +1,7 @@
 import { Given, When, Then } from "cucumber";
-//import { userManagement } from "../pageObjects/userManagement";
 import { browser, element, by, protractor } from "protractor";
-import { HomePage } from "../pages/HomePage";
-import { usermanagement } from "../pages/UserManagementPage";
+import { AddUserPage } from "../pages/AddUserPage";
+import { UserManagementPage } from "../pages/UserManagementPage";
 import chai from "chai";
 import fs from 'fs';
 
@@ -10,61 +9,44 @@ const fileReader = require('fs');
 const data = fileReader.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
+const orJsonFile = fileReader.readFileSync('./object_repo/object_repository.json');
+const orJsonObject = JSON.parse(orJsonFile);
 
-const objectFIle = fileReader.readFileSync('./object_Repo/objectRepository.json');
-const objectJson = JSON.parse(objectFIle);
-
-let dataVal = testData.env;
-console.log("Reading Environment : " + dataVal);
+const envJsonFile = fileReader.readFileSync('./environment.json');
+const envJsonObject = JSON.parse(envJsonFile);
 
 let expect = chai.expect;
 
-let ah = new HomePage();
-let um = new usermanagement();
+let addUserPage = new AddUserPage();
+let userManagementPage = new UserManagementPage();
 const expectedConditions = protractor.ExpectedConditions;
 
 Given('Admin user landed on user management page', async () => {
 
-  await browser.get(testData.env).then(async () => {
-    await browser.wait(expectedConditions.visibilityOf(ah.addUserLink), 60);
-    expect(await ah.addUserLink.isDisplayed()).to.equals(true,
-      "CLick Add User");
+  await browser.get(envJsonObject.env).then(async () => {
+    // browser.wait(expectedConditions.visibilityOf(userManagementPage.getAddUserLink()), 60);
+    // expect(await userManagementPage.getAddUserLink().isDisplayed()).to.equals(true,
+    //   "CLick Add User");
+    browser.sleep(10000);
   });
 });
 
 
-When('User Enter all the details in Add User Form', async () => {
-
-   // Write code here that turns the phrase above into concrete actions
-   await browser.waitForAngularEnabled(true);
-   await ah.addUserLink.click();
-   await ah.firstName.sendKeys(testData.firstName);
-   await ah.lasName.sendKeys(testData.lastName);
-   await ah.userName.sendKeys(testData.username);
-   await ah.password.sendKeys(testData.password);
-   await ah.email.sendKeys(testData.email);
-   await ah.mobile.sendKeys(testData.mobileNumber);
-   await ah.customer.get(0).click(); 
-   await element(by.cssContainingText('option', testData.role)).click();
-  
-   await ah.save.click();
-  
+When('Add new User with all the details on Add User Form', async () => {
+  await userManagementPage.clickOnAddUser();
+  await addUserPage.addUser();
 });
 
-
-When('User delete specified user from table', async () => {
-
-  console.log("Deleted User is : " + testData.deleteUser);
-  um.deleteuser(testData.deleteUser);
-  await um.crossokicon.click();
+Then('Verify user added successfully on web table', async () => {
+  await userManagementPage.verifyAddedUser(testData.username);
 });
 
-Then('User verify successfully added user in user management table', async () => {
-
-  await ah.verifyaddeduser(testData.username);
+When('Delete specified user i.e. {string} from table', async (userName) => {
+  // userManagementPage.deleteuser(userName);
+  // await userManagementPage.crossokicon.click();
+  // console.log("Deleted User is : " + testData.deleteUser);
 });
 
-Then('User verify user deleted successfully', async () => { 
-
-  await um.verifydeleteduser(testData.lastName);
+Then('Verify user {string} deleted successfully', async (userName) => {
+  // await userManagementPage.verifydeleteduser(userName);
 });

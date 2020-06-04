@@ -4,13 +4,12 @@
   "description": "framework for protractor",
   "main": "index.js",
   "scripts": {
-    "test": "protractor JS_Files/config.js",
+    "test": "protractor js_files/config.js",
     "pretest": "tsc",
-    "cucumbertest": "tsc && protractor JS_Files/config.js",
     "protractor": "./node_modules/protractor/built/cli.js",
-    "webdriver-update": "./node_modules/.bin/webdriver-manager update"
+    "setup": "npm install && webdriver-manager update"
   },
-  "author": "rahul",
+  "author": "sumit",
   "license": "ISC",
   "dependencies": {
     "@types/cucumber": "^4.0.4",

@@ -1,12 +1,9 @@
 {
-    "env":"http://www.way2automation.com/angularjs-protractor/webtables/",
-    "firstName" : "Sumit",
-    "lastName" : "Saxena",
-    "mobileNumber" : "87076666",
-    "username" : "sumsax",
-    "email" : "sumit@gmail.com",
+    "firstName": "Sumit",
+    "lastName": "Saxena",
+    "mobileNumber": "87076666",
+    "username": "sumsax",
+    "email": "sumit@gmail.com",
     "password": "hello@123",
-    "deleteUser":"Novak",
-    "role":"Customer"
-    
+    "role": "Customer"
 }

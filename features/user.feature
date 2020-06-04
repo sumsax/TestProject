@@ -1,16 +1,13 @@
-@addUser
+@Sanity
 Feature: As an Automation Engineer I want to verify user creation and deletion functionality
 
-        Background: User navigated to application home page
-            Given Admin user landed on user management page
+     Background: User navigated to application home page
+          Given Admin user landed on user management page
 
+     Scenario: Add a user and validate the user has been added to the table
+          When Add new User with all the details on Add User Form
+          Then Verify user added successfully on web table
 
-        Scenario: User Enters all details in User Form and save it
-             When User Enter all the details in Add User Form
-             Then User verify successfully added user in user management table
-
-        Scenario: As an Automation Engineer I want to delete a user
-             When User delete specified user from table
-             Then User verify user deleted successfully
-
-       
+     Scenario: Delete user User Name: novak and validate user has been deleted
+          When Delete specified user i.e. "Novak" from table
+          Then Verify user "Novak" deleted successfully
