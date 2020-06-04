@@ -20,7 +20,7 @@ export class UserManagementPage {
    */
   constructor() {
     this.addUserLink = element(by.xpath(orJsonObject.adduser));
-    this.userList = element.all(by.xpath(orJsonObject.userlist));
+    this.userList = element.all(by.repeater(orJsonObject.userlist));
     this.deleteConfirmation = element(by.xpath(orJsonObject.deleteConfirmation));
   }
 
@@ -39,39 +39,33 @@ export class UserManagementPage {
    * deleting user as per given user name 
    * @param userName 
    */
-  async deleteuser(userName: string){
-    let userPosInList = 0;
-    await this.userList.each((currentUser, index) => {
-      currentUser.getText().then(async function (displayUserName) {
-        userPosInList++;
-        console.log(userPosInList + " ----- "+ displayUserName + " ----- "+ userName);
+  async deleteUser(userName: string) {
+    await this.getUserRecordPosition(userName).then(async (pos) => {
+      await this.userList.get(pos - 1).element(by.className("icon icon-remove")).click().then(async () => {
+        await this.deleteConfirmation.click().then(() => {
+          console.log("User deleted: " + userName);
+        });
+      });
+    });
+  }
+
+  /**
+  * get the current user position on web-table
+  * @param userName 
+  */
+  async getUserRecordPosition(userName: string) {
+
+    let userPosInList = -1;
+    await this.userList.each(async function (currentUser, index) {
+      const cells = currentUser.all(by.css("td"));
+      await cells.get(2).getText().then(async function (displayUserName) {
         if (displayUserName == userName) {
-          await element(by.xpath("//table[@table-title='Smart Table example']/tbody/tr[" + userPosInList + "]/td[11]//i[@class='icon icon-remove']")).click();
+          console.log("User Found at Row : " + (index + 1));
+          userPosInList = (index + 1);
+          return;
         }
       });
     });
-    await this.deleteConfirmation.click();
+    return userPosInList;
   }
-
-   /**
-   * verify given user exsts on web-table
-   * @param userName 
-   */
-  async isUserExist(userName:string) {
-    
-    let userPosInList = 0;
-    let userFound = false;
-        await this.userList.each(function(currentUser, index) {              
-            currentUser.getText().then(async function (displayUserName) {
-            userPosInList++;     
-            console.log(userPosInList + " ---------------- " +displayUserName + " ---------------- " + userName) ; 
-            if(displayUserName == userName){
-              console.log("User Found at Row : " + userPosInList);
-              userFound = true;
-              return;
-            }                        
-        });
-      });
-      return userFound;
-    }
 }

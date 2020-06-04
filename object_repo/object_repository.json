@@ -9,6 +9,7 @@
     "mobilenumber": "input[name='Mobilephone']",
     "savebutton": "//button[text()='Save']",
     "adduser": ".//button[text()=' Add User']",
-    "userlist": "//table[@table-title='Smart Table example']/tbody/tr/td[3]",
+    "userlist1": "//table[@table-title='Smart Table example']/tbody/tr/td[3]",
+    "userlist": "dataRow in displayedCollection",
     "deleteConfirmation": "//button[text()='OK']"
 }

@@ -36,17 +36,17 @@ When('Add new User with all the details on Add User Form', async () => {
 });
 
 Then('Verify user added successfully on web table', async () => {
-  await userManagementPage.isUserExist(testData.username).then((userFound) => {
-    expect(userFound).to.equals(true, "User not added");
+  await userManagementPage.getUserRecordPosition(testData.username).then((pos) => {
+    expect(pos).to.not.equals(-1, "User not added");
   })
 });
 
 When('Delete specified user i.e. {string} from table', async (userName) => {
-  userManagementPage.deleteuser(userName);
+  await userManagementPage.deleteUser(userName);
 });
 
 Then('Verify user {string} deleted successfully', async (userName) => {
-  await userManagementPage.isUserExist(testData.username).then((userFound) => {
-    expect(userFound).to.equals(false, "User not deleted");
+  await userManagementPage.getUserRecordPosition(userName).then((pos) => {
+    expect(pos).to.equals(-1, "User not deleted");
   })
 });
