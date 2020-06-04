@@ -28,7 +28,7 @@ export let config: Config = {
     cucumberOpts: {
         // require step definitions
        // tags:"@AngularTesting",
-        format:'json:./cucumberreport.json',
+        format:'json:./cucumber_report.json',
        
         
         require: [
@@ -45,8 +45,8 @@ export let config: Config = {
       onComplete: () =>{
         var options = {
           theme: 'bootstrap',
-          jsonFile: './cucumberreport.json',
-          output: './cucumber_report.html',
+          jsonFile: './cucumber_report.json',
+          output: './reports/cucumber_report.html',
           reportSuiteAsScenarios: true,
           launchReport: true,
           metadata: {

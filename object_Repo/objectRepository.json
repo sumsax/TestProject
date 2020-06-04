@@ -5,11 +5,11 @@
     "password":"input[name='Password']",
     "customer":"option in column.options",
     "email":"input[name='Email']",
-    
     "mobilenumber":"input[name='Mobilephone']",
     "savebutton":"//button[text()='Save']",
     "adduser":".//button[text()=' Add User']",
     "role":"input[name='RoleId']",
+
     "deleteUser":"//button[text()='OK']",
     "userlist":"//table[@table-title='Smart Table example']/tbody/tr/td[2]",
     "okdeleteuser":"//button[text()='OK']",

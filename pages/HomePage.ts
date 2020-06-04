@@ -2,11 +2,10 @@ import { ElementFinder,element,by, ElementArrayFinder, browser } from "protracto
 import fs from 'fs';
 import chai from "chai";
 
-
-let expect = chai.expect;
+var expect = chai.expect;
 
 const filereader = require('fs');
-const objectFile = filereader.readFileSync('./objectRepo/objectRepository.json');
+const objectFile = filereader.readFileSync('./object_Repo/objectRepository.json');
 //Caps j 
 const objectJson = JSON.parse(objectFile);
 
@@ -50,15 +49,18 @@ export class HomePage {
 
         }
 
+
+      //verify added user after searching  
       async verifyAddedUser(firstname:string){
 
-            try{
-              
-              await this.searchuserbox.sendKeys(firstname);  
-             // await browser.sleep(20000);      
-              await expect(this.fistUser.getText()).toEqual(firstname);
+        try{     
+            await browser.sleep(2000);
+            await this.searchuserbox.sendKeys(firstname);  
+            await browser.sleep(2000);     
+            console.log("first user after search" + this.fistUser.getText());
+            expect(await this.fistUser.getText()).to.equals(firstname);     
             }catch(err){
-              //console.log(err);
+              console.log(err);
             }
 
       }

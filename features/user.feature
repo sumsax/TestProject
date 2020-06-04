@@ -12,3 +12,5 @@ Feature: As an Automation Engineer I want to verify user creation and deletion f
         Scenario: As an Automation Engineer I want to delete a user
              When User delete specified user from table
              Then User verify user deleted successfully
+
+       

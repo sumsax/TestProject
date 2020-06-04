@@ -1,8 +1,8 @@
 import { Given, When, Then } from "cucumber";
 //import { userManagement } from "../pageObjects/userManagement";
 import { browser, element, by, protractor } from "protractor";
-import { HomePage } from "../pageObjects/angularHomePage";
-import { usermanagement } from "../pageObjects/userManagement";
+import { HomePage } from "../pages/HomePage";
+import { usermanagement } from "../pages/userManagement";
 import chai from "chai";
 import fs from 'fs';
 
@@ -11,10 +11,10 @@ const data = fs1.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
 
-const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
+const objectFIle = fs1.readFileSync('./object_Repo/objectRepository.json');
 const objectjson = JSON.parse(objectFIle);
 
-var dataVal = testData.env;
+let dataVal = testData.env;
 console.log("Reading Environment : " + dataVal);
 
 let expect = chai.expect;
@@ -58,11 +58,11 @@ When('User delete specified user from table', async () => {
   console.log("Deleted User is : " + testData.deleteUser);
   um.deleteuser(testData.deleteUser);
   await um.crossokicon.click();
-  await browser.sleep(20000);
+  await browser.sleep(5000);
 });
 
 Then('User verify successfully added user in user management table', async () => {
-  ah.verifyAddedUser(testData.firstName);
+  await ah.verifyAddedUser(testData.firstName);
   
 });
 

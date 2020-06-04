@@ -3,13 +3,15 @@ import { ElementFinder,element,by, ElementArrayFinder, browser } from "protracto
 import fs from 'fs';
 
 const fs1 = require('fs');
-const objectFIle = fs1.readFileSync('./objectRepo/objectRepository.json');
+const objectFIle = fs1.readFileSync('./object_Repo/objectRepository.json');
 const objectjson = JSON.parse(objectFIle);
 
 var objectLocator = objectjson.firstname;
 
-export class usermanagement
-{
+
+
+//class to delete and verify user deletion
+export class usermanagement{
        userList:ElementArrayFinder;
        crossokicon:ElementFinder;
       
@@ -19,6 +21,8 @@ export class usermanagement
             this.crossokicon=element(by.xpath(objectjson.okdeleteuser));         
         }
 
+
+       //deleting user as per given name 
        async deleteuser(userLastName:string){
        let userinthelst=0;
           await this.userList.each(function(elementtest, index) {
@@ -35,6 +39,8 @@ export class usermanagement
 
       }
 
+
+      //verify deleted user should not be present in any of the row
       async verifydeleteduser(userLastName:string){
         let userinthelst=0;
            await this.userList.each(function(elementtest, index) {

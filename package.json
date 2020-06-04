@@ -4,9 +4,9 @@
   "description": "framework for protractor",
   "main": "index.js",
   "scripts": {
-    "test": "protractor JSFiles/configuration.js",
+    "test": "protractor JS_Files/configuration.js",
     "pretest": "tsc",
-    "cucumbertest": "tsc && protractor JSFiles/cucumberconfig.js",
+    "cucumbertest": "tsc && protractor JS_Files/cucumberconfig.js",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update"
   },
@@ -17,7 +17,6 @@
     "@types/jasmine": "^3.3.5",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "10.12.18",
-    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "cucumber": "^5.1.0",
     "cucumber-html-reporter": "^4.0.4",
@@ -29,6 +28,8 @@
     "typescript": "~3.2.2"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-smoothie": "^0.3.2",
     "protractor-css-booster": "^2.0.0"
   }
 }
