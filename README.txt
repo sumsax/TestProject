@@ -4,64 +4,54 @@ CONTENTS OF THIS FILE
  * Introduction
  * Feature of Framework
  * Requirement
- * Installation
- * Execution
- * 
+ * Installation/Framework Setup
+ * Test Execution
+ * Test Reporting
 
 
- INTRODUCTION
+INTRODUCTION
 ------------
+The Project is to display automation capability using Tool Protractor , BDD (Cucumber), typescript.
 
-The Project is to display automation capability of Candidate in Automation Test using Tool Protractor , BDD (Cucumber), typescript.
-
- * Add User and verify User : Class HomePage as POM
+ * Add User and verify User: Class AddUserPage as POM
    http://www.way2automation.com/angularjs-protractor/webtables/
 
- * Delete Specific User Based on Text Provided and verify it in table:CLass UserManagement as POM
+ * Delete Specific User and verify it in table: Class UserManagementPage as POM
    http://www.way2automation.com/angularjs-protractor/webtables/
 
-
-
- Framework Features
+Framework Features
 ------------
-
-Framework Capability:
-
- * Parametrised Object Repo and Test Data Repo based on Json
+ * Parametrized Object Repository and Test Data based on Json
  * Page Object Model 
- * Cucumber Reports 
+ * Protractor and Selenium locators
  * Exception Handling
- * On Failure Embedded screensot in cucumber report
- * Protractor and Selenium both locators used
+ * Embedded screenshot in cucumber report
 
- REQUIREMENTS
+REQUIREMENTS
 ------------
-
-This module requires the following modules:
-
- * Node Js Installed 
- * Visual Studio code
+This module requires the following component should be installed before running the test:
+ * Node Js with NPM
  * Chrome Version => 80
 
- NSTALLATION
+Installation/Framework Setup
 ------------
  
- * Mac - Navigate to Root Directry of Project and perform - npm install && webdriver-manager update
+ * Mac - Navigate to Root Directory of Project and perform - npm run setup
          if webdriver error displayed ................... - sudo node ./node_modules/.bin/webdriver-manager update
 
- * Mac - If any depencies left , peroform - sudo npm audit fix --force
+ * Mac - If any dependencies left ,perform  - sudo npm audit fix --force
 
- * Windows - Navigate to Root Directry of Project and perform -  npm install && webdriver-manager update  
-             if webdriver error displayed ................... - node ./node_modules/.bin/webdriver-manager update
+ * Windows - Navigate to Root Directory of Project and perform -  npm run setup  
+             if webdriver error displayed ............... - node ./node_modules/.bin/webdriver-manager update
 
- * Windows - If any depencies left , peroform -  npm audit fix --force
+ * Windows - If any depencies left , perform -  npm audit fix --force
 
-
-  Execution 
+Test Execution 
 ------------
- 
+ * Navigate to Root Directory of Project and perform - npm test
+   OR
  * Open Terminal in Visual Studio and perform - npm test
 
-
-
-
+Test Reporting 
+------------
+ * After test execution, test report will be generated under ./reports folder

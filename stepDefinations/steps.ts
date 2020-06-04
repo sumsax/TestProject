@@ -5,23 +5,22 @@ import { UserManagementPage } from "../pages/UserManagementPage";
 import chai from "chai";
 import fs from 'fs';
 
+// read json for test-data and environment properties
 const fileReader = require('fs');
 const data = fileReader.readFileSync('./testData/data.json');
 const testData = JSON.parse(data);
 
-const orJsonFile = fileReader.readFileSync('./object_repo/object_repository.json');
-const orJsonObject = JSON.parse(orJsonFile);
-
 const envJsonFile = fileReader.readFileSync('./environment.json');
 const envJsonObject = JSON.parse(envJsonFile);
 
+// page object reference
 let addUserPage = new AddUserPage();
 let userManagementPage = new UserManagementPage();
 
 const expectedConditions = protractor.ExpectedConditions;
 let expect = chai.expect;
 
-Given('Admin user landed on user management page', async () => {
+Given('User landed on user management page', async () => {
 
   await browser.get(envJsonObject.env).then(async () => {
     browser.wait(expectedConditions.visibilityOf(userManagementPage.addUserLink), 60);

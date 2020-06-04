@@ -2,7 +2,7 @@
 Feature: As an Automation Engineer I want to verify user creation and deletion functionality
 
      Background: User navigated to application home page
-          Given Admin user landed on user management page
+          Given User landed on user management page
 
      Scenario: Add a user and validate the user has been added to the table
           When Add new User with all the details on Add User Form
