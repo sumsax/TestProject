@@ -47,12 +47,14 @@ This module requires the following modules:
 ------------
  
  * Mac - Navigate to Root Directry of Project and perform - sudo npm install
+         if webdriver error displayed ................... - sudo node ./node_modules/.bin/webdriver-manager update
 
- * Mac - If any depencies left peroform - sudo npm audit fix --force
+ * Mac - If any depencies left , peroform - sudo npm audit fix --force
 
- * Windows - If any depencies left peroform -  npm audit fix --force
+ * Windows - Navigate to Root Directry of Project and perform -  npm install  
+             if webdriver error displayed ................... - node ./node_modules/.bin/webdriver-manager update
 
- * Windows - If any depencies left peroform -  npm audit fix --force
+ * Windows - If any depencies left , peroform -  npm audit fix --force
 
 
   Execution 
